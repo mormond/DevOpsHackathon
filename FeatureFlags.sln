@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlags", "FeatureFlags\FeatureFlags.csproj", "{EABAC1AA-1F24-4CB3-BF37-F55B02B25278}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlag", "..\..\..\Documents\Visual Studio 2015\Projects\FeatureFlagTestConsole\FeatureFlag\FeatureFlag.csproj", "{FAB9E66A-A141-4A10-AE23-016F6F05FC11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagTestConsole", "..\..\..\Documents\Visual Studio 2015\Projects\FeatureFlagTestConsole\FeatureFlagTestConsole\FeatureFlagTestConsole.csproj", "{274ABB9D-9275-4701-9CF7-421B4B6BB2AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{EABAC1AA-1F24-4CB3-BF37-F55B02B25278}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EABAC1AA-1F24-4CB3-BF37-F55B02B25278}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EABAC1AA-1F24-4CB3-BF37-F55B02B25278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAB9E66A-A141-4A10-AE23-016F6F05FC11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAB9E66A-A141-4A10-AE23-016F6F05FC11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAB9E66A-A141-4A10-AE23-016F6F05FC11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAB9E66A-A141-4A10-AE23-016F6F05FC11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{274ABB9D-9275-4701-9CF7-421B4B6BB2AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{274ABB9D-9275-4701-9CF7-421B4B6BB2AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{274ABB9D-9275-4701-9CF7-421B4B6BB2AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{274ABB9D-9275-4701-9CF7-421B4B6BB2AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
