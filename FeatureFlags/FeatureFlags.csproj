@@ -122,12 +122,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Home_BController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="FeatureFlags\Director.cs" />
+    <Compile Include="FeatureFlags\FeatureConfig.cs" />
     <Compile Include="FeatureFlags\FeatureFlagControllerFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="FeatureFlags\IDirector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +177,12 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FeatureFlag\FeatureFlag.csproj">
+      <Project>{fab9e66a-a141-4a10-ae23-016f6f05fc11}</Project>
+      <Name>FeatureFlag</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

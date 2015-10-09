@@ -10,6 +10,21 @@ namespace FeatureFlags
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        private FeatureConfig featureConfig;
+
+        public FeatureConfig FeatureFlagConfiguration {
+
+            get
+            {
+                if (this.featureConfig == null)
+                {
+                    this.featureConfig = new FeatureConfig();
+                }
+
+                return this.featureConfig;
+            }
+        }
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
