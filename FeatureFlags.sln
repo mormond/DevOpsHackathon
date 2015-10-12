@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlags", "FeatureFlags\FeatureFlags.csproj", "{EABAC1AA-1F24-4CB3-BF37-F55B02B25278}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagsWebsite", "FeatureFlags\FeatureFlagsWebsite.csproj", "{EABAC1AA-1F24-4CB3-BF37-F55B02B25278}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlag", "FeatureFlag\FeatureFlag.csproj", "{FAB9E66A-A141-4A10-AE23-016F6F05FC11}"
 EndProject
