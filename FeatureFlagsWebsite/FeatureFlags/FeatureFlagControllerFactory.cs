@@ -9,7 +9,11 @@ namespace FeatureFlags
 {
     public class FeatureFlagControllerFactory : DefaultControllerFactory
     {
-        IDirector director;
+        private const string FeatureControllerSuffix = "_B";
+        private const string ControllersNamespace = "FeatureFlags.Controllers";
+        private const string ControllerSuffix = "Controller";
+
+        private IDirector director;
 
         public FeatureFlagControllerFactory()
         {
@@ -37,31 +41,41 @@ namespace FeatureFlags
             return base.GetControllerType(requestContext, newControllerName);
         }
 
+        private bool ControllerExists(string controllerName)
+        {
+            string fullControllerName = ControllersNamespace + "." + controllerName + ControllerSuffix;
+            return (Type.GetType(fullControllerName, false) != null);
+        }
+
+        private string CheckRequiredFeaturesEnabledAndRewriteControllerName(string controllerName, Func<bool> featureFunction)
+        {
+            if (!controllerName.EndsWith(FeatureControllerSuffix))
+                if (featureFunction())
+                {
+                    string bControllerName = controllerName + FeatureControllerSuffix;
+                    controllerName = ControllerExists(bControllerName) ? bControllerName : controllerName;
+                }
+            return controllerName;
+        }
 
         private string CheckAnyFeatureEnabledAndRewriteControllerName(string controllerName)
         {
-            if (director.IsAnyFeatureEnabled() && !controllerName.EndsWith("_B"))
-            {
-                controllerName = $"{controllerName}_B";
-            }
-            return controllerName;
+            return CheckRequiredFeaturesEnabledAndRewriteControllerName(controllerName, () => director.IsAnyFeatureEnabled());
         }
 
         private string CheckAllFeaturesEnabledAndRewriteControllerName(string controllerName)
         {
-            if (director.AreAllFeaturesEnabled() && !controllerName.EndsWith("_B"))
-            {
-                controllerName = $"{controllerName}_B";
-            }
-            return controllerName;
+            return CheckRequiredFeaturesEnabledAndRewriteControllerName(controllerName, () => director.AreAllFeaturesEnabled());
         }
 
         private string CheckNamedFeatureEnabledAndRewriteControllerName(string controllerName, string featureName, ExpandoObject args)
         {
-            if (director.IsEnabled(featureName, args) && !controllerName.EndsWith("_B"))
-            {
-                controllerName = $"{controllerName}_B";
-            }
+            if (!controllerName.EndsWith(FeatureControllerSuffix))
+                if (director.IsEnabled(featureName, args))
+                {
+                    string bControllerName = controllerName + FeatureControllerSuffix;
+                    controllerName = ControllerExists(bControllerName) ? bControllerName : controllerName;
+                }
             return controllerName;
         }
 

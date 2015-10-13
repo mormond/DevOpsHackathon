@@ -121,10 +121,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\Home_BController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Config\Feature.cs" />
     <Compile Include="Config\Features.cs" />
+    <Compile Include="Controllers\Home_BController.cs" />
     <Compile Include="FeatureFlags\FeatureConfig.cs" />
     <Compile Include="FeatureFlags\FeatureFlagControllerFactory.cs" />
     <Compile Include="Global.asax.cs">
